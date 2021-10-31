@@ -13,6 +13,13 @@ def hello_world():
     return "Hello, World!"
 
 
+@app.route("/hello")
+@app.route("/hello/<username>")
+def hello_world2(username=None):
+    # return "Hello, World! {}!".format(username)
+    return render_template("hello.html", username=username)
+
+
 def main():
     app.debug = True
     app.run(host="127.0.0.1", port=5000)
