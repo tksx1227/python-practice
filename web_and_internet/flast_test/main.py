@@ -20,6 +20,12 @@ def hello_world2(username=None):
     return render_template("hello.html", username=username)
 
 
+@app.route("/post", methods=["POST", "PUT", "DELETE"])
+def show_post():
+    # ユーザーが post に投げた値を取り出せる
+    return str(request.values)
+
+
 def main():
     app.debug = True
     app.run(host="127.0.0.1", port=5000)
