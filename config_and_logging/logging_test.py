@@ -1,4 +1,5 @@
 import logging
+from config_and_logging import logger_test
 
 
 """
@@ -17,11 +18,18 @@ DEBUG
 
 # formatter を使うとログメッセージをカスタマイズできる
 # formatter = "%(levelname)s:%(message)s"
-formatter = "%(asctime)s:%(message)s"
-logging.basicConfig(level=logging.DEBUG, format=formatter)
+# formatter = "%(asctime)s:%(message)s"
+# logging.basicConfig(level=logging.DEBUG, format=formatter)
 
-logging.critical("critical")
-logging.error("error")
-logging.warning("warning")
-logging.info("info")
-logging.debug("debug")
+# logging.critical("critical")
+# logging.error("error")
+# logging.warning("warning")
+# logging.info("info")
+# logging.debug("debug")
+
+logging.basicConfig(level=logging.INFO)
+
+logger = logging.getLogger(__name__)
+logger.info("from main")
+
+logger_test.do_something()
