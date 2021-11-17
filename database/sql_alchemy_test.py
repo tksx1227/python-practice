@@ -4,7 +4,8 @@ import sqlalchemy.orm
 
 
 # 扱うデータベースを指定, echo=Trueで詳細が出力される
-engine = sqlalchemy.create_engine("sqlite:///:memory:", echo=True)
+# engine = sqlalchemy.create_engine("sqlite:///:memory:", echo=True)
+engine = sqlalchemy.create_engine("sqlite:///test_sqlite2.db", echo=True)
 
 Base = sqlalchemy.ext.declarative.declarative_base()
 
